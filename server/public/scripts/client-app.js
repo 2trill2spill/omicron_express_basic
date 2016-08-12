@@ -26,7 +26,8 @@ $(document).ready(function () {
       },
 
       error: function (response) {
-        console.log('Attempted POST /songs, did not work');
+        //console.log('Attempted POST /songs, did not work');
+        alert("Can not add song entered.");
       }
     });
   });
@@ -38,7 +39,7 @@ function getSongs() {
     success: function (songs) {
       $('#song-list').empty();
       songs.forEach(function (song) {
-        $('#song-list').append('<div>' + song.title + '-' + song.artist + '</div>');
+        $('#song-list').append('<div>' + song.dateAdded + ": " + song.title + '-' + song.artist + '</div>');
       });
     },
 
